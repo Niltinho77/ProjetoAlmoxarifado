@@ -70,7 +70,7 @@
     background-image: url('https://aeroin.net/wp-content/uploads/2023/03/Aviacao-do-Exercito-Brasileiro-Helicoptero-Sikorsky-S-70-UH-60-Black-Hawk-23032003.jpg');
     background-size: cover;
     background-position: center;
-    filter: blur(5px); /* Aplica o desfoque à imagem de fundo */
+    filter: blur(4px); /* Aplica o desfoque à imagem de fundo */
     
   }
   
