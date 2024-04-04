@@ -1,0 +1,167 @@
+/* Variáveis de cores e fontes */
+:root {
+    --primary-color: #171717;
+    --secondary-color: #28a745; /* Verde Oliva para botões */
+    --accent-color: #17a2b8;
+    --background-color: #f8f9fa;
+    --text-color: #343a40;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    text-align: center; /* Centraliza o conteúdo */
+  }
+
+  button {
+    background-color: #6b8e23; /* Cor primária */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  button:hover {
+    background-color: #007bff00; /* Cor de hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px); /* Efeito de "levitação" */
+  }
+  
+  button:active {
+    transform: translateY(1px); /* Efeito ao clicar */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Especificidade para o botão de voltar */
+  .button-voltar {
+    background-color: #6b8e23; /* Cor secundária */
+  }
+  
+  .button-voltar:hover {
+    background-color: #5a626800; /* Escurecer na hover */
+  }
+  
+  /* Estilização do campo de pesquisa */
+  #pesquisaProduto {
+    padding: 10px;
+    border-radius: 25px; /* Bordas arredondadas */
+    border: 2px solid #0056b3;
+    width: 250px; /* Largura fixa */
+    margin-bottom: 20px;
+  }
+  
+  
+  .background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    background-image: url('https://aeroin.net/wp-content/uploads/2023/03/Aviacao-do-Exercito-Brasileiro-Helicoptero-Sikorsky-S-70-UH-60-Black-Hawk-23032003.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); /* Aplica o desfoque à imagem de fundo */
+    
+  }
+  
+  h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo do campo de pesquisa */
+  #pesquisaProduto {
+    padding: 10px 20px;
+    margin: 20px auto;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--btn-radius);
+    width: 80%; /* Torna o campo de pesquisa responsivo */
+    max-width: 500px; /* Largura máxima para dispositivos maiores */
+  }
+  /* Estilo dos botões */
+  
+
+  #remove-button {
+    background-image: url("imagem.png"); /* Caminho para a imagem do ícone de remover */
+    background-size: contain; /* Ajusta a imagem para caber dentro do botão */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-position: center; /* Centraliza a imagem dentro do botão */
+    background-color: #0057b300;
+    border: none; /* Remove a borda padrão do botão */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    width: 35px; /* Largura do botão - ajuste conforme necessário */
+    height: 35px; /* Altura do botão - ajuste conforme necessário */
+    text-indent: -9999px; /* Oculta o texto do botão */
+    overflow: hidden; /* Previne qualquer overflow do texto */
+  }
+  
+  /* Estilo da tabela de estoque */
+  #tabelaEstoque {
+    margin-top: 20px;
+    
+  }
+  
+  table {
+    width: 100%;
+    border-collapse:collapse;
+    margin: 0 auto; /* Centraliza a tabela */
+    
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: center;
+    
+  }
+  
+  th {
+    background-color: #6b8e23;
+    color: white;
+  }
+  
+  tr{
+    background-color: #f2f2f286;
+}
+  
+  /* Adicionando responsividade */
+  @media screen and (max-width: 768px) {
+    table, th, td {
+      display: block;
+    }
+  
+    th, td {
+      text-align: right;
+    }
+  
+    td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+    }
+  
+    tr {
+      margin-bottom: 15px;
+    }
+  }
+  
+  
+  .download {
+    display: inline-block; /* Permite definir largura e altura */
+    width: 50px; /* Largura do ícone de download */
+    height: 35px; /* Altura do ícone de download */
+    background-image:url(btn_download.png); /* URL da sua imagem de download */
+    background-size: cover; /* Garante que a imagem cubra todo o espaço disponível */
+    text-indent: -9999px; /* Esconde o texto do link */
+    overflow: hidden; /* Evita que o texto escondido transborde */
+  }
+  
