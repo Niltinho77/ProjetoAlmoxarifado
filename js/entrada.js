@@ -1,12 +1,17 @@
 function darEntrada() {
   let codigo = document.getElementById('codigoEntrada').value;
   let quantidade = parseInt(document.getElementById('quantidadeEntrada').value, 10);
+  let data = new Date().toISOString().slice(0, 10); // Obtém a data atual no formato YYYY-MM-DD
 
   let produtos = JSON.parse(localStorage.getItem('produtos') || '[]');
   let produto = produtos.find(p => p.codigo === codigo);
 
   if (produto) {
-    produto.entrada += quantidade;
+    if (!produto.entradas) {
+      produto.entradas = []; // Inicializa o array de entradas se não existir
+    }
+    produto.entradas.push({ data: data, quantidade: quantidade }); // Adiciona a entrada
+
     localStorage.setItem('produtos', JSON.stringify(produtos));
 
     if (window.opener && typeof window.opener.atualizarListaProdutos === 'function') {

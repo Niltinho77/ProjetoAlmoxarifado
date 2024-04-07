@@ -1,0 +1,114 @@
+/* Variáveis de cores e fontes */
+:root {
+    --primary-color: #171717;
+    --secondary-color: #28a745; /* Verde Oliva para botões e destaques */
+    --accent-color: #17a2b8; /* Azul para acentuações e hover */
+    --background-color: #f8f9fa; /* Cor de fundo da página */
+    --text-color: #343a40; /* Cor do texto */
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Família de fontes */
+  }
+  
+   
+  body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    text-align: center; /* Centraliza o conteúdo */
+  }
+
+    /* Adiciona um overlay sobre o fundo para suavizar o contraste */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Escurece levemente o fundo */
+    z-index: -2;
+  }
+
+  .background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    background-image: url('https://aeroin.net/wp-content/uploads/2023/03/Aviacao-do-Exercito-Brasileiro-Helicoptero-Sikorsky-S-70-UH-60-Black-Hawk-23032003.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px); /* Aplica o desfoque à imagem de fundo */
+  }
+  
+   
+  /* Estilização do campo de pesquisa */
+  #pesquisaProduto {
+    padding: 10px;
+    border-radius: 25px; /* Bordas arredondadas */
+    border: 2px solid #0056b3;
+    width: 250px; /* Largura fixa */
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para a mensagem de erro */
+  #mensagemErro {
+    color: red;
+    margin: 10px 0;
+    display: none; /* Inicialmente escondido */
+  }
+  
+ /* Estilo da tabela de estoque */
+ #tabelaEstoque {
+    margin-top: 20px;
+    
+  }
+  
+  table {
+    width: 100%;
+    border-collapse:collapse;
+    margin: 0 auto; /* Centraliza a tabela */
+    
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: center;
+    
+  }
+  
+  th {
+    background-color: #6b8e23;
+    color: white;
+  }
+  
+  tr{
+    background-color: #f2f2f286;
+}
+  
+  /* Responsividade */
+  @media screen and (max-width: 768px) {
+    #pesquisaProduto {
+      width: 95%;
+    }
+  
+    table, th, td {
+      display: block;
+    }
+  
+    th, td {
+      text-align: right;
+    }
+  
+    td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+    }
+  
+    tr {
+      margin-bottom: 15px;
+    }
+  }
+  

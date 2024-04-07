@@ -1,35 +1,73 @@
 document.addEventListener('DOMContentLoaded', function() {
-  gerarRelatorioDeConsumo();
+  gerarRelatorioDeProdutos();
 });
 
-function gerarRelatorioDeConsumo() {
-  const produtosSaida = JSON.parse(localStorage.getItem('produtosSaida')) || [];
+function filtrarRelatorio() {
+  const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
+  gerarRelatorioDeProdutos(searchTerm);
+}
 
-  // Agrupa as saídas por código de produto, somando as quantidades
-  const resumoPorProduto = produtosSaida.reduce((acc, {codigo, nome, quantidade}) => {
-    if (!acc[codigo]) {
-      acc[codigo] = { nome, quantidade: 0 };
-    }
-    acc[codigo].quantidade += quantidade;
-    return acc;
-  }, {});
+function gerarRelatorioDeProdutos(searchTerm = '') {
+  const produtos = JSON.parse(localStorage.getItem('produtos') || '[]');
+  const tabelaRelatorio = document.getElementById('tabelaRelatorio');
+  const mensagemErro = document.getElementById('mensagemErro');
+  let encontrouResultados = false;
 
-  // Gera o HTML da tabela
-  let conteudoTabela = `<table border='1'>
-                          <tr>
-                            <th>Código</th>
-                            <th>Nome</th>
-                            <th>Quantidade Consumida</th>
-                          </tr>`;
+  let conteudoTabela = `<table border="1">
+    <tr>
+      <th>Código</th>
+      <th>Nome</th>
+      <th>Data</th>
+      <th>Entrada</th>
+      <th>Saída</th>
+    </tr>`;
 
-  Object.entries(resumoPorProduto).forEach(([codigo, { nome, quantidade }]) => {
-    conteudoTabela += `<tr>
-                         <td>${codigo}</td>
-                         <td>${nome}</td>
-                         <td>${quantidade}</td>
-                       </tr>`;
+  produtos.forEach(produto => {
+    const registrosData = {};
+
+    // Agrupa as entradas e saídas por data
+    produto.entradas?.forEach(({ data, quantidade }) => {
+      registrosData[data] = registrosData[data] || { entrada: 0, saida: 0 };
+      registrosData[data].entrada += quantidade;
+    });
+    produto.saidas?.forEach(({ data, quantidade }) => {
+      registrosData[data] = registrosData[data] || { entrada: 0, saida: 0 };
+      registrosData[data].saida += quantidade;
+    });
+
+    // Filtra e adiciona ao relatório
+    Object.keys(registrosData).forEach(data => {
+      const { entrada, saida } = registrosData[data];
+      const dataStr = data.includes(searchTerm) || searchTerm === '';
+      const codigoStr = produto.codigo.toLowerCase().includes(searchTerm);
+      const nomeStr = produto.nome.toLowerCase().includes(searchTerm);
+
+      if (dataStr || codigoStr || nomeStr) {
+        encontrouResultados = true;
+        conteudoTabela += `<tr>
+          <td>${produto.codigo}</td>
+          <td>${produto.nome}</td>
+          <td>${data}</td>
+          <td>${entrada}</td>
+          <td>${saida}</td>
+        </tr>`;
+      }
+    });
   });
 
-  conteudoTabela += "</table>";
-  document.getElementById('tabelaRelatorio').innerHTML = conteudoTabela;
+  conteudoTabela += '</table>';
+  tabelaRelatorio.innerHTML = conteudoTabela;
+
+  // Ajusta a exibição de mensagens de erro baseado nos resultados
+  if (!encontrouResultados && searchTerm) {
+    mensagemErro.style.display = 'block';
+    mensagemErro.textContent = 'Nenhum resultado encontrado.';
+  } else if (searchTerm === '') {
+    mensagemErro.style.display = 'none';
+    if (!encontrouResultados) {
+      tabelaRelatorio.innerHTML = 'Inicie uma pesquisa para ver os resultados aqui.';
+    }
+  } else {
+    mensagemErro.style.display = 'none';
+  }
 }

@@ -3,13 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Relatório de Estoque</title>
-  <link rel="stylesheet" href="path/to/styles.css">
-
+  <link rel="stylesheet" href="path/to/relatorios.css">
 </head>
 <body>
   <h1>Relatório de Consumo de Produtos</h1>
+  <div class="background-overlay"></div>
+  <div class="background-container"></div>
+  
+  <label for="searchInput">Pesquisar:</label>
+  <input type="text" id="searchInput" placeholder="Código, Nome ou Data (YYYY-MM-DD)" oninput="filtrarRelatorio()">
+  
+  <div id="mensagemErro" style="color: red; display: none;">Por favor, insira um termo de pesquisa.</div>
   <div id="tabelaRelatorio"></div>
 
-  <script src="relatorios.js"></script>
+  <script src="js/relatorios.js"></script>
 </body>
 </html>
