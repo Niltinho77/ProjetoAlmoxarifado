@@ -1,4 +1,7 @@
 /* Base da página */
+* {
+  font-family: 'Permanent Marker', sans-serif;
+}
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f8f9fa;
@@ -15,10 +18,10 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1; 
-    background-image: url('https://aeroin.net/wp-content/uploads/2023/03/Aviacao-do-Exercito-Brasileiro-Helicoptero-Sikorsky-S-70-UH-60-Black-Hawk-23032003.jpg');
+    background-image: url('https://www.defesanet.com.br/wp-content/uploads/2023/03/Militares-Guzzo.webp');
     background-size: cover;
     background-position: center;
-    filter: blur(0px); /* Aplica o desfoque à imagem de fundo */
+    filter: blur(4px); /* Aplica o desfoque à imagem de fundo */
   }
   
   /* Título do formulário */
