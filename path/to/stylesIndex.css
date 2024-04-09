@@ -62,7 +62,7 @@ h1 {
 .container-buttons {
   display: flex;
   flex-direction: column; /* Organiza os botões em uma coluna */
-  align-items: center; /* Centraliza os botões horizontalmente */
+  align-items: center; 
   gap: 30px; /* Espaço entre os botões */
   width: 100%; /* Garante que o container ocupe a largura disponível */
   max-width: 400px; /* Máxima largura do container para manter os botões agrupados */
