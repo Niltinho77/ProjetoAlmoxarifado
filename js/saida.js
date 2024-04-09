@@ -7,13 +7,8 @@ function darSaida() {
   let produto = produtos.find(p => p.codigo === codigo);
 
   if (produto) {
-    let totalSaida = produto.saidas ? produto.saidas.reduce((acc, cur) => acc + cur.quantidade, 0) : 0;
-    if ((produto.entradas ? produto.entradas.reduce((acc, cur) => acc + cur.quantidade, 0) : 0) - totalSaida >= quantidade) {
-      if (!produto.saidas) {
-        produto.saidas = []; // Inicializa o array de saídas se não existir
-      }
-      produto.saidas.push({ data: data, quantidade: quantidade }); // Adiciona a saída
-
+    if (produto.entrada - produto.saida >= quantidade) {
+      produto.saida += quantidade;
       localStorage.setItem('produtos', JSON.stringify(produtos));
 
       if (window.opener && typeof window.opener.atualizarListaProdutos === 'function') {

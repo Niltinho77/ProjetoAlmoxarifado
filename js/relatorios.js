@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', function() {
   gerarRelatorioDeProdutos();
 });
 
+// Adiciona o ouvinte de eventos ao botão "Voltar à Página Inicial"
+document.getElementById('voltarHome').addEventListener('click', function() {
+  window.close();
+});
+
 function filtrarRelatorio() {
   const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
   gerarRelatorioDeProdutos(searchTerm);

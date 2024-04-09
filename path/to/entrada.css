@@ -1,5 +1,5 @@
 * {
-  font-family: 'Permanent Marker', sans-serif;
+  font-family: 'Lexend Peta' , sans-serif;
 }
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -27,7 +27,7 @@ body {
   h2 {
     color: #171717;
     margin: 0 auto 30px;
-    font-size: 24px;
+    font-size: 50px;
   }
   
   /* Container do Formulário */
@@ -35,6 +35,7 @@ body {
     background-color: #ffffff5e;
     margin: 20px auto;
     padding: 20px;
+    font-size: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     width: 100%;
@@ -75,7 +76,7 @@ body {
   
   /* Botão de submissão do formulário */
   form#formEntrada button[type="submit"] {
-    background-color: #28a745;
+    background-color: #4a5c08;
     color: white;
   }
   
@@ -88,7 +89,9 @@ body {
   
   /* Hover e Active para os botões */
   form#formEntrada button:hover {
-    background-color: darken(#28a745, 10%);
+    background-color: #007bff00; /* Cor de hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px); /* Efeito de "levitação" */
   }
   
   form#formEntrada button:active {

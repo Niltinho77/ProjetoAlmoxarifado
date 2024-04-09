@@ -1,14 +1,18 @@
 /* Variáveis de cores e fontes */
 :root {
-    --primary-color: #171717;
-    --secondary-color: #28a745; /* Verde Oliva para botões e destaques */
-    --accent-color: #17a2b8; /* Azul para acentuações e hover */
-    --background-color: #f8f9fa; /* Cor de fundo da página */
-    --text-color: #000000; /* Cor do texto */
-    --font-family: 'Permanent Marker', sans-serif;
+  --primary-color: #007bff;
+  --secondary-color: #405c08; /* Verde Oliva */
+  --accent-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #2c3034;
+  --transparente: rgba(255, 255, 255, 0); /* Corrigido: Definido como transparente */
+  --font-family: 'Lexend Peta',  sans-serif;
+  --border-radius: 8px;
   }
   
-   
+  h1 {
+    font-size: 50px;
+  }
   body {
     font-family: var(--font-family);
     background-color: var(--background-color);
@@ -53,6 +57,30 @@
     margin: 20px auto; /* Centraliza horizontalmente */
   }
   
+  button {
+    background-image: linear-gradient(to right, var(--dark-color), var(--secondary-color));
+    font-family: 'Lexend Peta', sans-serif;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    margin: 10px;
+  }
+  
+  button:hover {
+    background-color: #007bff00; /* Cor de hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px); /* Efeito de "levitação" */
+  }
+  
+  button:active {
+    transform: translateY(1px); /* Efeito ao clicar */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  }
   /* Estilo para a mensagem de erro */
   #mensagemErro {
     color: red;

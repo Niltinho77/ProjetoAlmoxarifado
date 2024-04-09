@@ -1,11 +1,11 @@
 /* Variáveis de cores e fontes */
 :root {
     --primary-color: #171717;
-    --secondary-color: #28a745; /* Verde Oliva para botões */
+    --secondary-color: #4a5c08; /* Verde Oliva para botões */
     --accent-color: #17a2b8;
     --background-color: #f8f9fa;
-    --text-color: #343a40;
-    --font-family: 'Permanent Marker', sans-serif;
+    --text-color: #000000;
+    --font-family: 'Lexend Peta',  sans-serif;
     
   }
   
@@ -19,17 +19,17 @@
   }
 
   button {
-    background-color: #6b8e23; /* Cor primária */
-    font-family: 'Permanent Marker', sans-serif;
-    color: #000000;
+    font-family: var(--font-family);
+    color: rgb(0, 0, 0);
     border: none;
     padding: 10px 20px;
     font-size: 16px;
-    border-radius: 25px; /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    background-color: #4a5c08;
     cursor: pointer;
-    margin: 10px;
+    border-radius: 25px; /* Bordas arredondadas */
+    background-image: linear-gradient(to right, var(--dark-color), var(--secondary-color));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   button:hover {
@@ -45,7 +45,7 @@
   
   /* Especificidade para o botão de voltar */
   .button-voltar {
-    background-color: #6b8e23; /* Cor secundária */
+    background-color: #4a5c08; /* Cor secundária */
   }
   
   .button-voltar:hover {
@@ -79,6 +79,7 @@
   h1 {
     color: var(--primary-color);
     margin-bottom: 20px;
+    font-size: 50px;
   }
   
   /* Estilo do campo de pesquisa */
@@ -130,7 +131,7 @@
   }
   
   th {
-    background-color: #6b8e23;
+    background-color: #4a5c08;
     color: rgb(0, 0, 0);
     font-family: 'Permanent Marker', sans-serif;
   }

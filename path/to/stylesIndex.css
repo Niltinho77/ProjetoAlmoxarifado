@@ -1,11 +1,11 @@
 :root {
-  --primary-color: #007bff;
-  --secondary-color: #405c08; /* Verde Oliva */
+  --primary-color: #0d0d0e;
+  --secondary-color: #4a5c08; /* Verde Oliva */
   --accent-color: #17a2b8;
-  --light-color: #f8f9fa;
+  --light-color: #f8f9fa00;
   --dark-color: #343a40;
   --transparente: rgba(255, 255, 255, 0); /* Corrigido: Definido como transparente */
-  --font-family: 'Permanent Marker', sans-serif;
+  --font-family: 'Lexend Peta', sans-serif;
   --border-radius: 8px;
 }
 
@@ -43,8 +43,7 @@ h1 {
   padding: 20px 40px;
   border-radius: var(--border-radius);
   background-image: linear-gradient(to right, var(--dark-color), var(--secondary-color));
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+ 
   
 }
 
@@ -59,11 +58,7 @@ h1 {
   }
 }
 
-h1:hover {
-  transform: scale(1.05) translateY(-5px);
-  background-image: linear-gradient(to left, var(--transparente), var(--dark-color));
-  cursor: pointer;
-}
+
 
 .container-buttons {
   display: flex;
@@ -110,6 +105,6 @@ button:focus {
   text-align: center;
   padding: 15px;
   background-color: var(--dark-color);
-  color: var(--light-color);
+  color: #000;
   border-top: 3px solid var(--secondary-color);
 }

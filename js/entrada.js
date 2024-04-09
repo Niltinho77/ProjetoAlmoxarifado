@@ -7,11 +7,7 @@ function darEntrada() {
   let produto = produtos.find(p => p.codigo === codigo);
 
   if (produto) {
-    if (!produto.entradas) {
-      produto.entradas = []; // Inicializa o array de entradas se não existir
-    }
-    produto.entradas.push({ data: data, quantidade: quantidade }); // Adiciona a entrada
-
+    produto.entrada += quantidade;
     localStorage.setItem('produtos', JSON.stringify(produtos));
 
     if (window.opener && typeof window.opener.atualizarListaProdutos === 'function') {
