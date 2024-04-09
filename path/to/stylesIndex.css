@@ -12,7 +12,6 @@
 body {
   font-family: var(--font-family);
   background-color: var(--light-color);
-  background-image: url('https://www.defesanet.com.br/wp-content/uploads/2023/03/Militares-Guzzo.webp');
   background-size: cover;
   background-position: center;
   color: var(--dark-color);
