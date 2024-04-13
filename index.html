@@ -11,9 +11,9 @@
   <h1 id="h1">ALMOXARIFADO 2024</h1>
   <div class="background-overlay"></div>
   <div class="container-buttons">
-    <button onclick="abrirCadastro()">Cadastrar Novo Produto</button>
-    <button onclick="abrirEntrada()">Entrada de Produto</button>
-    <button onclick="abrirSaida()">Saída de Produto</button>
+    <button id="cadastroBtn" onclick="abrirCadastro()">Cadastrar Novo Produto</button>
+    <button id="entradaBtn" onclick="abrirEntrada()">Entrada de Produto</button>
+    <button id="saidaBtn" onclick="abrirSaida()">Saída de Produto</button>
     <button onclick="abrirEstoque()">Estoque</button>
     <button id="openReportPage">Gerar Relatórios</button>
   </div>
@@ -21,6 +21,31 @@
   
 
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('keydown', function(event) {
+      if (event.ctrlKey) {
+        switch (event.key) {
+          case '1':
+            // Simula um clique no botão de cadastro
+            const cadastroBtn = document.getElementById('cadastroBtn');
+            if (cadastroBtn) cadastroBtn.click();
+            break;
+          case '2':
+            // Simula um clique no botão de entrada
+            const entradaBtn = document.getElementById('entradaBtn');
+            if (entradaBtn) entradaBtn.click();
+            break;
+          case '3':
+            // Simula um clique no botão de saída
+            const saidaBtn = document.getElementById('saidaBtn');
+            if (saidaBtn) saidaBtn.click();
+            break;
+        }
+      }
+    });
+    </script>
+    
+    
   <footer class="footer">Controle de Estoque do Almoxarifado - Desenvolvido pelo 2º Sgt Nilton</footer>
 </body>
 </html>

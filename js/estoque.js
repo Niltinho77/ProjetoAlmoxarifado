@@ -30,7 +30,7 @@ function atualizarTabelaEstoque(filtro = '') {
 
     // Para cada produto filtrado, calcula a quantidade disponível e adiciona uma linha na tabela
     produtosFiltrados.forEach((produto) => {
-      let quantidade = produto.entrada - produto.saida; // Calcula a quantidade disponível
+      let quantidade = (produto.entradaTotal || 0) - (produto.saidaTotal || 0); // Utiliza os totais de entrada e saída
       let barcodeId = `barcode-${produto.codigo}`; // ID único para o elemento SVG do código de barras
       let downloadLinkId = `download-link-${produto.codigo}`; // ID único para o link de download do código de barras
 

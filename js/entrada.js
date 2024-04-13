@@ -7,14 +7,12 @@ function darEntrada() {
   let produto = produtos.find(p => p.codigo === codigo);
 
   if (produto) {
-    produto.entrada += quantidade;
+    if (!produto.entradas) produto.entradas = [];
+    produto.entradas.push({ data: new Date().toISOString().slice(0, 10), quantidade: quantidade });
+    produto.entradaTotal = (produto.entradaTotal || 0) + quantidade; // Atualiza o total de entrada
     localStorage.setItem('produtos', JSON.stringify(produtos));
 
-    if (window.opener && typeof window.opener.atualizarListaProdutos === 'function') {
-      window.opener.atualizarListaProdutos();
-    }
-
-    alert('Entrada de produto registrada com sucesso!');
+   alert('Entrada de produto registrada com sucesso!');
     window.close();
   } else {
     alert("Produto não encontrado.");
