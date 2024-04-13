@@ -26,6 +26,11 @@
     window.onload = function() {
       document.getElementById('codigo').focus();
     };
+    document.addEventListener('keydown', function(event) {
+  if (event.key === "Escape") {  // Pode usar "Esc" dependendo do navegador
+    window.close();  // Comando para fechar a janela
+  }
+});
   </script>
   
 </body>

@@ -27,6 +27,11 @@
       document.getElementById('codigoEntrada').focus();
       document.getElementById('quantidadeEntrada').value = 1;
     };
+    document.addEventListener('keydown', function(event) {
+  if (event.key === "Escape") {  // Pode usar "Esc" dependendo do navegador
+    window.close();  // Comando para fechar a janela
+  }
+});
   </script>
   
 </body>
